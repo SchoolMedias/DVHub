@@ -1,0 +1,187 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+
+{% block css %}
+<link href="{% static 'danmuplayer/src/css/scojs.css' %}" rel="stylesheet">
+  <link href="{% static 'danmuplayer/src/css/colpick.css' %}" rel="stylesheet">
+  <link href="{% static 'danmuplayer/src/css/bootstrap.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'danmuplayer/src/css/main.css' %}">
+
+
+
+{% endblock css %}
+
+        {% block content %}
+
+
+    <div class="container ">
+        <div class="row clearfix">
+            <div class="col-md-8 column">
+
+
+
+
+                <div class="card">
+        <div class="card-body">
+          <div class="row">
+           <div class="col-md-2 column">
+          <img src="{{video.User.Profile_photo.url}}" alt="" width="64" height="64" class="rounded-circle me-2">
+           </div>
+          <div class="col-md-6 column">
+          <h4 class="card-title">{{video.User.NickName}}</h4>
+          <p class="card-text">{{video.User.Signature}}</p>
+          </div>
+
+          <div class="col-md-2 column">
+
+          </div>
+
+          <div class="col-md-1 column">
+          {% if interest is None %}
+              <form class="form-horizontal" role="form" action="" method='post'>
+                   {% csrf_token %}
+              <input type="hidden" name="addinterest" value="yes">
+              <input type="hidden" name="userid" value="{{video.User.User_ID}}">
+              <button type="submit" class="btn btn-success">关注</button>
+              </form>
+          {% else %}
+               <form class="form-horizontal" role="form" action="" method='post'>
+                   {% csrf_token %}
+              <input type="hidden" name="cancelinterest" value="yes">
+              <input type="hidden" name="userid" value="{{video.User.User_ID}}">
+              <button type="submit" class="btn btn-danger">取消关注</button>
+              </form>
+        {% endif %}
+          </div>
+
+
+          </div>
+        </div>
+      </div>
+
+<!--
+                <video width="850" height="600" controls controlslist="nodownload">
+                    <source src= "{{video.VideoFile.url}}" type="video/mp4">
+
+                </video>
+-->
+      <div id="danmup"></div>
+            </div>
+             <div class="video-info">
+            <div class="video-title">{{video.Title}}</div>
+            <div class="video-view-count">{{video.Viewsnum}}观看</div>
+            <div class="video-view-operation">
+              {{video.Content}}
+            </div>
+            <div class="extra content video-view-operation">
+                <form role="form" action="" method='post'>
+                <span class="left floated like">
+                    {%  csrf_token %}
+                    {% if likeRow is None %}
+                  <button type="submit" class="btn btn-primary" name="good" value="yes">
+                    点赞 <span class="badge bg-danger"></span>
+                  </button>
+                    {% else %}
+                  <button class="btn btn-primary" name="good" disabled>
+                    点赞 <span class="badge bg-danger">{{goods}}</span>
+                  </button>
+                    {% endif %}
+                </span>
+                <span class="right floated star">
+                     {% if favoriteRow is None %}
+                  <button type="submit" class="btn btn-danger" name="like" value="yes">
+                   收藏 <span class="badge bg-dark"></span>
+                  </button>
+                    {% else %}
+                      <button type="submit" class="btn btn-danger"  name="like" value="yes" disabled>
+                   收藏 <span class="badge bg-dark">{{likes}}</span>
+                  </button>
+                     {% endif %}
+                </span>
+                 </form>
+            </div>
+            <div class="ui divider"></div>
+
+
+            <div class="ui comments col-md-6 column">
+            {% if True %}
+            <form class="ui reply form" id="comment_form" method="post"
+                  action="">
+                {% csrf_token %}
+                <div class="field">
+                    {% bootstrap_form form %}
+                </div>
+                <button class="ui primary button" type="submit" name="comment" value="yes">
+                    添加评论
+                </button>
+                <div class="ui info message n">
+                    <div class="item" id="comment-result"></div>
+                </div>
+            </form>
+            {% else %}
+            <div class="ui ignored info attached message">
+                <p>登录后即可评论 &nbsp;&nbsp;&nbsp;<a href="{% url 'login' %}">马上登录</a></p>
+            </div>
+            {% endif %}
+            <h3 class="ui dividing header" id="id_comment_label">评论</h3>
+
+
+            {% for cn in commentlist %}
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="row">
+                       <div class="col-md-2 column">
+                           <img class="rounded-circle mr-2" src="{{cn.User.Profile_photo.url}}" style="height:50px;width:50px">
+                       </div>
+                      <div class="col-md-6 column">
+                      <h4 class="card-title">{{cn.User.NickName}}</h4>
+                      <p class="card-text">{{cn.Comment}}</p>
+                          <p class="card-text">{{cn.Time}}</p>
+                      </div>
+
+                      </div>
+                    </div>
+                  </div>
+            {% endfor %}
+
+
+
+
+
+
+
+        </div>
+
+        </div>
+
+        </div>
+    </div>
+
+    {% endblock content %}
+
+
+ {% block script %}
+
+<script src="{% static 'danmuplayer/src/js/jquery-2.1.4.min.js' %} "></script>
+<script src="{% static 'danmuplayer/src/js/jquery.shCircleLoader.js' %}"></script>
+<script src="{% static 'danmuplayer/src/js/sco.tooltip.js' %} "></script>
+<script src="{% static 'danmuplayer/src/js/colpick.js' %}"></script>
+<script src="{% static 'danmuplayer/src/js/jquery.danmu.js' %}"></script>
+<script src="{% static 'danmuplayer/src/js/danmuplayer.min.js' %}"></script>
+
+<script>
+$("#danmup").DanmuPlayer({
+
+  src:"{{video.VideoFile.url}",    //视频源
+
+  width:800,			//视频宽度
+
+  height:445			//视频高度
+
+});
+</script>
+
+
+{% endblock script %}

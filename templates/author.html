@@ -1,0 +1,42 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+
+
+		    {% block content %}
+
+
+  <div>
+
+	  </div>
+    <div class="jumbotron border-round-0 min-50vh" style="background-image:url({{user.Background_photo.url}});">
+    </div>
+    <div class="container mb-4">
+    	<img src="{{user.Profile_photo.url}}" class="mt-neg100 mb-4 rounded-circle" alt="" width="128" height="128" >
+    	<h1 class="font-weight-bold title">{{user.NickName}}</h1>
+    	<p>
+    		{{user.Signature}}
+    	</p>
+    </div>
+    <div class="container-fluid mb-5">
+    	<div class="row">
+    		<div class="card-columns">
+
+    					{% for vi in videolist %}
+    			<div class="card card-pin">
+    				<img class="card-img" src="{{vi.CoverFile.url}}" alt="Card image">
+    				<div class="overlay">
+    					<h2 class="card-title title">{{vi.Title}}</h2>
+    					<div class="more">
+    						<a href="{% url 'vplay' vi.DVcode %}">
+    						<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> More </a>
+    					</div>
+    				</div>
+    			</div>
+				{%endfor%}
+    		</div>
+    	</div>
+    </div>
+         {% endblock content %}
