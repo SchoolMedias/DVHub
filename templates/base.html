@@ -106,17 +106,20 @@
         <button class="navbar-light navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
-        {% comment %} <ul class="collapse navbar-collapse" id="navbarsDefault">
+         <ul class="collapse navbar-collapse" id="navbarsDefault">
             <ul class="navbar-nav mr-auto align-items-center">
                 <form class="bd-search hidden-sm-down">
                     <input type="text" class="form-control bg-graylight border-0 font-weight-bold" id="search-input" placeholder="Search..." autocomplete="off">
                     <div class="dropdown-menu bd-search-results" id="search-results">
                     </div>
                 </form>
-            </ul> {% endcomment %}
+            </ul>
             <ul class="navbar-nav ml-auto align-items-center">
                 <li class="nav-item">
                 <a class="nav-link active" href="{% url 'index' %}">首页</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active" href="">直播</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link active" href="{% url 'user' %}">个人主页</a>
@@ -125,7 +128,7 @@
                 {% if user is not None%}
                 <a class="nav-link" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">    <img src="{{user.Profile_photo.url}}" alt="" width="32" height="32" class="rounded-circle me-2"><span class="align-middle">[{{user.get_Title_display}}]{{user.NickName}}</span></a>
                 {% else %}
-                <a class="nav-link" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="align-middle">...</span></a>
+                <a class="nav-link" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">   <img src="{% static 'av.png'%}" alt="" width="32" height="32" class="rounded-circle me-2"><span class="align-middle">请登录</span></a>
                 {% endif %}
     <div class="dropdown-menu dropdown-menu-right shadow-lg " style="width:190px" aria-labelledby="dropdown08">
 
@@ -136,7 +139,7 @@
     <span><a class="dropdown-item rounded-2" href="{% url 'imgcenter'%}">投稿管理</a></span>
          <div class="dropdown-divider">
                </div>
-        {% endif %}
+{% endif %}
 
 
         <span><a class="dropdown-item rounded-2" href="{% url 'register'%}">注册</a></span>
@@ -163,9 +166,11 @@
 
 
     <main role="main">
+        <div style="height:20px">
+        </div>
     {% block content %}
+
     {% endblock content %}
-        
     </main>
 
     <script src="assets/js/app.js"></script>

@@ -7,42 +7,45 @@ from video.models import Video
 from django.utils import timezone
 import pytz
 from InterACT.models import Attention_Table
+from django.http import JsonResponse
 tz = pytz.timezone('Asia/Shanghai')
 # Create your views here.
 def Register(request):
-    RegiForm=RegisterForm()
+    status = 0
+    print(RegisterForm)
     userid = request.session.get('UserID', None)
     user = models.User.objects.filter(User_ID=userid).first()
-    if (request.method=="POST") & (request.POST.get('addUser')=='yes'):
-        form=RegisterForm(request.POST,request.FILES)
-        md1=models.User()
-        md1.User_ID=request.POST.get('User_ID')
-        md1.NickName=request.POST.get('NickName')
-        md1.Password=request.POST.get('Password')
-        md1.Email=request.POST.get('Email')
-        md1.Phone_number=request.POST.get('Phone_number')
-        md1.Profile_photo=request.FILES.get('Profile_photo')
-        print("23456787654reqwrwqeqw")
-        print(request.FILES.get('Profile_photo'))
-        md1.Background_photo=request.FILES.get('Profile_photo')
-        now_time = timezone.now().astimezone(tz=tz).strftime("%Y-%m-%d %H:%M:%S")
-        now = datetime.datetime.strptime(now_time, '%Y-%m-%d %H:%M:%S')
-        md1.Register_time=now
-        md1.save()
-        print(md1.User_ID)
-        if form.is_valid():
-            if models.User.objects.filter(User_ID=form.Meta.model.User_ID) is not None:
-                print("Username has existed")
-            #print(NewStu)
+    if (request.method=="POST") :
+        try:
+            print(request.FILES)
+            md1=models.User()
+            md1.NickName=request.POST.get('NickName')
+            md1.Password=request.POST.get('Password')
+            md1.Email=request.POST.get('Email')
+            md1.Phone_number=request.POST.get('Phone_number')
+            md1.Profile_photo=request.FILES.get('Profile_photo')
+            if models.User.objects.filter(Email=md1.Email).first() is None:
+                print("23456787654reqwrwqeqw")
+                print(request.FILES.get('Profile_photo'))
+                md1.Background_photo=request.FILES.get('Profile_photo')
+                now_time = timezone.now().astimezone(tz=tz).strftime("%Y-%m-%d %H:%M:%S")
+                now = datetime.datetime.strptime(now_time, '%Y-%m-%d %H:%M:%S')
+                md1.Register_time=now
+                md1.save()
+                print(str(md1.User_ID))
+                status=1
+                return redirect('/login')
+                #print(request.POST.get('Stu_Department'))
             else:
-                form.save()
-                print('success save')
-            #print(request.POST.get('Stu_Department'))
+                status=2
+             #   return JsonResponse({'status':status})
+        except:
+            status=0
+            #return JsonResponse({'status': status})
 
-
-    return render(request,'Register.html',{
-                                            'RegisterForm':RegiForm,
+    return render(request,'regist.html',{
                                             'user':user,
+                                            'status':status
                                             })
 
 

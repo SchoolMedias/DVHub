@@ -5,10 +5,10 @@ from django.core.validators import RegexValidator
 
 
 class User(models.Model):
-    User_ID = models.CharField(max_length=20,primary_key=True)#id
-    NickName = models.CharField(max_length=15)#昵称
-    Password = models.CharField(max_length=25)#密码
-    Email = models.EmailField()#邮箱
+    User_ID = models.AutoField(primary_key=True)#id
+    NickName = models.CharField(max_length=15,default="New User")#昵称
+    Password = models.CharField(max_length=25,blank=False)#密码
+    Email = models.EmailField(blank=False)#邮箱
     Signature = models.CharField(max_length=64,blank=True,default='What your love is your life.')  #个性签名
     Phone_number = models.CharField(max_length=17, blank=True)#手机号
     Profile_photo = models.ImageField(upload_to='profile_photos/',default='defaultimgs/dfpp.jpg')#头像

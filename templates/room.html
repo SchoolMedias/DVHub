@@ -1,0 +1,280 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+
+{% block css %}
+  <link href="{% static 'danmuplayer/src/css/scojs.css' %}" rel="stylesheet">
+  <link href="{% static 'danmuplayer/src/css/colpick.css' %}" rel="stylesheet">
+  <link href="{% static 'danmuplayer/src/css/bootstrap.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'danmuplayer/src/css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'danmu/style.css' %}" />
+<style>
+
+</style>
+{% endblock css %}
+
+
+
+
+{% block content %}
+
+<div class="container ">
+
+
+
+    <div class="row clearfix" >
+      <div class="col-md-9 column">
+                              <div class="card">
+        <div class="card-body">
+          <div class="row">
+           <div class="col-md-2 column">
+          <img src="{{room.Owner.Profile_photo.url}}" alt="" width="64" height="64" class="rounded-circle me-2">
+           </div>
+          <div class="col-md-6 column">
+          <h4 class="card-title">{{room.Owner.NickName}}</h4>
+          <p class="card-text">{{room.Owner.Signature}}</p>
+          </div>
+
+          <div class="col-md-2 column">
+
+          </div>
+
+
+
+
+          </div>
+        </div>
+      </div>
+
+
+
+        <div style="position: relative;">
+        <div style="position: absolute;">
+        <div id="dplayer" style="height:600px;width:960px;margin:0"></div>
+        </div>
+        <div id="content" class="content"></div>
+        </div>
+
+
+      </div>
+ <div class="col-md-3 column">
+
+<div>
+    <textarea id="chat-log" cols="38" rows="26" contenteditable="false"></textarea><br>
+    <input id="chat-message-input" type="text" size="38"><br>
+    <input id="chat-message-submit" type="button" value="Send">
+    {{ room_name|json_script:"room-name" }}
+</div>
+        </div>
+
+
+<!--待调整-->
+
+
+</div>
+{% if room.Owner.User_ID == user.User_ID %}
+<div>
+
+    {% if room.roomstatus   %}
+        <form role="form" action="" method='post' enctype="multipart/form-data">
+            {%  csrf_token  %}
+            <input name='flag' type="submit" id="stop" class="btn btn-danger btn-lg btn-block" value="结束直播">
+        </form>
+
+    {% else %}
+    <form role="form" action="" method='post' enctype="multipart/form-data">
+        {%  csrf_token  %}
+        <input name='flag' type="submit" id="sta" class="btn btn-success btn-lg btn-block" value="开始直播">
+    </form>
+    {% endif %}
+
+
+</div>
+{% endif %}
+
+{% endblock content %}
+
+
+ {% block script %}
+
+<script src="{% static 'danmu/main.js' %}"></script>
+
+
+<script src="{% static 'flv\flv.js\dist\flv.min.js' %}"></script>
+<script src="{% static 'dplayer/node_modules/dplayer/dist/DPlayer.min.js' %}"></script>
+<script>
+
+</script>
+
+
+     <script>
+     let urlss = "http://localhost:8080/live/{{room.roomID}}.flv";
+     if("{{room.roomstatus}}"=="False")
+     {
+       urlss= " ";
+       alert("主播还在来的路上。")
+     }
+     const dp = new DPlayer({
+    container: document.getElementById('dplayer'),
+    video: {
+        url: urlss,
+        type: 'flv',
+    },
+     apiBackend: {
+        read: function (options) {
+            console.log('Pretend to connect WebSocket');
+            options.success([]);
+        },
+        send: function (options) {
+            console.log('Pretend to send danmaku via WebSocket', options.data);
+                        chatSocket.send(JSON.stringify({
+                'message': options.data,
+            }));
+            options.success();
+        },
+    },
+
+
+    live: true,
+    danmaku: true,
+});
+ dp.danmaku.opacity(0.5);
+ const danmmaku = {
+            text: 'Get a danmaku via WebSocket',
+            color: '#b7daff',
+            type: 'top',
+            };
+             dp.danmaku.draw(danmmaku);
+
+
+
+    class Barrage {
+        constructor(id) {
+            this.domList = [];
+            this.dom = document.querySelector('#' + id);
+            if (this.dom.style.position == '' || this.dom.style.position == 'static') {
+                this.dom.style.position = 'relative';
+            }
+            this.dom.style.overflow = 'hidden';
+            let rect = this.dom.getBoundingClientRect();
+            this.domWidth = rect.right - rect.left;
+            this.domHeight = rect.bottom - rect.top;
+        }
+
+
+        shoot(text) {
+            let div = document.createElement('div');
+            div.style.position = 'absolute';
+            div.style.left = this.domWidth + 'px';
+            div.style.top = (this.domHeight - 20) * +Math.random().toFixed(2) + 'px';
+            div.style.whiteSpace = 'nowrap';
+            div.style.color = '#' +Math.floor(Math.random() * 256).toString(10);
+            div.innerText = text;
+            this.dom.appendChild(div);
+
+
+            let roll = (timer) => {
+                let now = +new Date();
+                roll.last = roll.last || now;
+                roll.timer = roll.timer || timer;
+                let left = div.offsetLeft;
+                let rect = div.getBoundingClientRect();
+                if (left < (rect.left - rect.right)) {
+                    this.dom.removeChild(div);
+                } else {
+                    if (now - roll.last >= roll.timer) {
+                        roll.last = now;
+                        left -= 3;
+                        div.style.left = left + 'px';
+                    }
+                    requestAnimationFrame(roll);
+                }
+            }
+            roll(50 * +Math.random().toFixed(2));
+        }
+
+    }
+
+    let barage = new Barrage('content');
+
+
+
+        const chatSocket = new WebSocket(
+            'ws://'
+            + window.location.host
+            + '/ws/chat/'
+            + '{{ room.roomID }}'
+            + '/'
+        );
+
+        chatSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            if (data.message == "over") {
+                let vid = {
+                url: "",
+                type: 'mp4',
+            }
+                dp.switchVideo(vid);
+            }
+            else if (data.message == "start") {
+                let vid = {
+                url: "http://localhost:8080/live/{{room.roomID}}.flv",
+                type: 'flv',
+            }
+            console.log("asdasdasdasasdsadasd666666")
+                dp.switchVideo(vid);
+            }
+
+
+
+            document.querySelector('#chat-log').value += (data.message.username+':'+data.message.data + '\n');
+
+            barage.shoot(data.message.data);
+        };
+
+        chatSocket.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+        };
+
+        document.querySelector('#chat-message-input').focus();
+        document.querySelector('#chat-message-input').onkeyup = function(e) {
+            if (e.key === 'Enter') {  // enter, return
+                document.querySelector('#chat-message-submit').click();
+            }
+        };
+
+        document.querySelector('#chat-message-submit').onclick = function(e) {
+            const messageInputDom = document.querySelector('#chat-message-input');
+            const data = messageInputDom.value;
+
+
+            const name =  "{{user.NickName}}";
+            const message= {"data": data,
+                            "username": name};
+            chatSocket.send(JSON.stringify({
+                'message': message,
+            }));
+            messageInputDom.value = '';
+
+        };
+
+         document.querySelector('#stop').onclick = function(e) {
+            const message= "over";
+            chatSocket.send(JSON.stringify({
+                'message': message,
+            }));
+         };
+
+         document.querySelector('#start').onclick = function(e) {
+            const message= "start";
+            alert("startttt");
+            chatSocket.send(JSON.stringify({
+                'message': message,
+            }));
+         };
+    </script>
+
+
+{% endblock script %}

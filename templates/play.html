@@ -9,7 +9,10 @@
   <link href="{% static 'danmuplayer/src/css/bootstrap.css' %}" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'danmuplayer/src/css/main.css' %}">
 
+<style>
 
+
+</style>
 
 {% endblock css %}
 
@@ -18,7 +21,7 @@
 
     <div class="container ">
         <div class="row clearfix">
-            <div class="col-md-8 column">
+            <div class="col-md-9 column">
 
 
 
@@ -67,8 +70,9 @@
 
                 </video>
 -->
-      <div id="danmup"></div>
-            </div>
+            <div id="dplayer" style="height:600px;width:960px;margin:0"></div>
+
+
              <div class="video-info">
             <div class="video-title">{{video.Title}}</div>
             <div class="video-view-count">{{video.Viewsnum}}观看</div>
@@ -105,15 +109,16 @@
             <div class="ui divider"></div>
 
 
-            <div class="ui comments col-md-6 column">
+            <div class="ui comments col-md-12 column">
             {% if True %}
             <form class="ui reply form" id="comment_form" method="post"
                   action="">
                 {% csrf_token %}
-                <div class="field">
-                    {% bootstrap_form form %}
-                </div>
-                <button class="ui primary button" type="submit" name="comment" value="yes">
+
+                     <label for="comment">请输入评论：</label>
+      <textarea class="form-control " rows="5" id="comment" name="Comment"></textarea>
+
+                <button class="btn btn-success " type="submit" name="comment" value="yes">
                     添加评论
                 </button>
                 <div class="ui info message n">
@@ -164,22 +169,24 @@
 
  {% block script %}
 
-<script src="{% static 'danmuplayer/src/js/jquery-2.1.4.min.js' %} "></script>
-<script src="{% static 'danmuplayer/src/js/jquery.shCircleLoader.js' %}"></script>
-<script src="{% static 'danmuplayer/src/js/sco.tooltip.js' %} "></script>
-<script src="{% static 'danmuplayer/src/js/colpick.js' %}"></script>
-<script src="{% static 'danmuplayer/src/js/jquery.danmu.js' %}"></script>
-<script src="{% static 'danmuplayer/src/js/danmuplayer.min.js' %}"></script>
 
+<script src="{% static 'dplayer/node_modules/dplayer/dist/DPlayer.min.js' %}"></script>
 <script>
-$("#danmup").DanmuPlayer({
-
-  src:"{{video.VideoFile.url}",    //视频源
-
-  width:800,			//视频宽度
-
-  height:445			//视频高度
-
+const dp = new DPlayer({
+    container: document.getElementById('dplayer'),
+    video: {
+        url: "{{video.VideoFile.url}}",
+    },
+    screenshot:true,
+    danmaku: {
+     addition: ['http://127.0.0.1:8000/api/danmu'],
+     id:'4157142',
+     api:'http://127.0.0.1:8000/',
+     token:'tokendemo',
+     maximum:1000,
+     user:'DYsss',
+     unlimited: true,
+       },
 });
 </script>
 

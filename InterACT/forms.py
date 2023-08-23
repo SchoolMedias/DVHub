@@ -10,4 +10,4 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment_Table
         fields = ['Comment']
-        label={'Comment':'',}
+        label={'Comment':'评论',}

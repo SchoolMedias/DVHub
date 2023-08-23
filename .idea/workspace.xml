@@ -5,33 +5,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="889ecf35-e094-404a-9f98-2a20117aed47" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/Upload/defaultimgs/dfpp.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/admin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/dropload.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/reset.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/semantic.custom.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/fans.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/interest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/livechat/consumers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/livechat/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/livechat/routing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/livechat/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/danmu/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/danmu/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/jquery-3.7.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/chatroom.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/livefile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/regist.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/room.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DVhub/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/DVhub/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DVhub/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DVhub/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DVhub/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/DVhub/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InterACT/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/InterACT/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InterACT/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/InterACT/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterACT/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/InterACT/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/User/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/User/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/User/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/avplayer.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/fans.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/fans.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/imgcenter.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/imgcenter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/interest.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/interest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/password.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/password.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/play.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/play.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/video/2f167af6422ae05da3c038f07ea04d41_raw.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/video/DNABP.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/video/DNABP_7UdSb8N.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/video/DNABP_9yNLLQL.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/video/DNABP_WGKU8R3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/video/DNABP_vSvrOQg.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/video/DNABP_y1G02G1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/video/WeChat_20230517150820.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/video/WeChat_20230517150820_BkWbZQA.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/video/WeChat_20230517150820_KTOuoC0.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/video/WeChat_20230517150820_Ysg7Ko0.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/video/WeChat_20230517150820_ryY5y7r.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/video/evilcsgo.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/video/人机素材.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/video/人机素材_U7bavlV.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/video/流浪地球壁纸.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/video/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/video/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -47,19 +79,24 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "E:/数据库/数据库2/DVhub/static/danmuplayer/src/js",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "E:/数据库/数据库2/DVhub/templates",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\数据库\数据库2\DVhub\templates" />
+      <recent name="E:\数据库\数据库2\DVhub\static\danmu" />
       <recent name="E:\数据库\数据库2\DVhub\static\danmuplayer\src\js" />
       <recent name="E:\数据库\数据库2\DVhub\static" />
       <recent name="E:\数据库\数据库2\DVhub\static\t1\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\数据库\数据库2\DVhub\static" />
       <recent name="E:\数据库\数据库2\DVhub\static\danmuplayer\src" />
     </key>
   </component>
@@ -79,7 +116,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

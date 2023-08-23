@@ -14,14 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 import InterACT.views as IACT
 import User.views
 import main.views
+import video.views
+import livechat.views
 from video import views
-
+import livechat.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('Register/',User.views.Register,name='register'),
@@ -42,6 +44,14 @@ urlpatterns = [
     path('profile/',User.views.profile,name='profile'),
     path('password/',User.views.password,name='password'),
     path('imgcenter/',User.views.imgcenter,name='imgcenter'),
+    path("livefile", livechat.views.roomfile, name="livefile"),
+    #api
+    path('api/danmu',video.views.gdanmu),
+
+    path('chat/', include('livechat.urls')),
+
+
+
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

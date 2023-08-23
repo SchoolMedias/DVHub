@@ -1,9 +1,12 @@
 from django.shortcuts import render,redirect,HttpResponse
+from django.views.decorators.http import require_http_methods
+
 from .forms import VideoForm
 from .models import Video,User,Classification
 from User.views import islogin
 from InterACT import models as Intermodels
 from InterACT import forms
+from django.http import JsonResponse
 # Create your views here.
 
 def vupload(request):
@@ -145,3 +148,34 @@ def vplay(request,dvcode):
             'user':user,
             'interest':interest,
         })
+
+def getvalue(a):
+    return a
+@require_http_methods(["GET"])
+def gdanmu(request):
+    data={
+        'code': 0,
+        'data':[
+           # [  ],
+            [   2.11120,
+                0,
+                16777215,
+                "sadas",
+                "你好",
+            ],
+            [ 3.11120,
+             0,
+             16777215,
+             "sadas",
+             "你好",
+             ],
+            [5.0,
+             0,
+             16777215,
+             "sadas",
+             "你好",
+             ]
+        ]
+    }
+    print(data['data'][0][2])
+    return JsonResponse(data)
