@@ -4,53 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="889ecf35-e094-404a-9f98-2a20117aed47" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/livechat/consumers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/livechat/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/livechat/routing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/livechat/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/danmu/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/danmu/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/jquery-3.7.0.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/chatroom.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/livefile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/regist.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/room.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+    <list default="true" id="889ecf35-e094-404a-9f98-2a20117aed47" name="变更" comment="直播">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DVhub/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/DVhub/asgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DVhub/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DVhub/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DVhub/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/DVhub/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InterACT/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/InterACT/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/User/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/User/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/avplayer.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/fans.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/fans.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/imgcenter.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/imgcenter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/interest.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/interest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/password.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/play.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/play.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/video/2f167af6422ae05da3c038f07ea04d41_raw.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/video/DNABP.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/video/DNABP_7UdSb8N.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/video/DNABP_9yNLLQL.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/video/DNABP_WGKU8R3.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/video/DNABP_vSvrOQg.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/video/DNABP_y1G02G1.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/video/WeChat_20230517150820.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/video/WeChat_20230517150820_BkWbZQA.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/video/WeChat_20230517150820_KTOuoC0.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/video/WeChat_20230517150820_Ysg7Ko0.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/video/WeChat_20230517150820_ryY5y7r.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/video/evilcsgo.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/video/人机素材.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/video/人机素材_U7bavlV.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/video/流浪地球壁纸.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/video/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/video/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/room.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/room.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +25,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -77,16 +37,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "E:/数据库/数据库2/DVhub/templates",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/数据库/数据库2/DVhub/templates&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\数据库\数据库2\DVhub\templates" />
@@ -109,6 +69,28 @@
       <option name="presentableId" value="Default" />
       <updated>1684255603779</updated>
     </task>
+    <task id="LOCAL-00001" summary="直播">
+      <created>1692810290907</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1692810290907</updated>
+    </task>
+    <task id="LOCAL-00002" summary="直播">
+      <created>1692845967960</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1692845967960</updated>
+    </task>
+    <task id="LOCAL-00003" summary="直播">
+      <created>1692856349064</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1692856349064</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -133,5 +115,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="直播" />
+    <option name="LAST_COMMIT_MESSAGE" value="直播" />
   </component>
 </project>

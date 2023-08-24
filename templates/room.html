@@ -58,25 +58,37 @@
         </div>
 
 
+
+
+
       </div>
  <div class="col-md-3 column">
 
 <div>
-    <textarea id="chat-log" cols="38" rows="26" contenteditable="false"></textarea><br>
+    <textarea id="chat-log" cols="38" rows="26" contenteditable="false" overflow="scroll" readonly style="resize:none"></textarea><br>
     <input id="chat-message-input" type="text" size="38"><br>
-    <input id="chat-message-submit" type="button" value="Send">
+    <div style="height:5px"> </div>
+    <input id="chat-message-submit" type="button" class = "btn btn-success btn-lg btn-block" value="Send">
     {{ room_name|json_script:"room-name" }}
 </div>
         </div>
 
 
 <!--待调整-->
+ <div class="col-md-9 column">
+
+      <div class="video-info">
+            <div class="video-title">{{room.roomName}}</div>
+            <div class="video-view-operation">
+              {{room.roomInfo}}
+            </div>
+         </div>
+ </div>
 
 
-</div>
 {% if room.Owner.User_ID == user.User_ID %}
-<div>
-
+<div class="col-md-3 column">
+ <div style="height:10px"> </div>
     {% if room.roomstatus   %}
         <form role="form" action="" method='post' enctype="multipart/form-data">
             {%  csrf_token  %}
@@ -93,6 +105,12 @@
 
 </div>
 {% endif %}
+
+
+
+
+</div>
+
 
 {% endblock content %}
 
