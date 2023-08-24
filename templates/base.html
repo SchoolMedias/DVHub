@@ -14,7 +14,8 @@
 
 	    <link rel="stylesheet" href="{% static  't1/css/app.css' %}">
     <link rel="stylesheet" href="{% static  't1/css/theme.css' %}">
-    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
+    <!--<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">-->
     <script src="{%static 'bootstrap/js/bootstrap.bundle.min.js'%}"></script>
     <script src="{%static 'bootstrap/js/bootstrap.min.js'%}"></script>
     <script src="{% static  't1/js/theme.js' %}"></script>
@@ -119,7 +120,7 @@
                 <a class="nav-link active" href="{% url 'index' %}">首页</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link active" href="">直播</a>
+                <a class="nav-link active" href="{% url 'lives' %}">直播</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link active" href="{% url 'user' %}">个人主页</a>

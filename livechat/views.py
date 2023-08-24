@@ -65,7 +65,7 @@ def roomfile(request):
     content={
         "user":user,
         "form":form,
-        "id":liveroom.roomID,
+        "liveroom":liveroom,
             }
     return render(request, "livefile.html", content)
 

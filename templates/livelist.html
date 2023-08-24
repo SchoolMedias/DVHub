@@ -9,7 +9,7 @@
     
     <section class="mt-4 mb-5">
     <div class="container mb-4">
-    	<h1 class="font-weight-bold title">视频列表</h1>
+    	<h1 class="font-weight-bold title">直播列表</h1>
     	<div class="row">
     		<nav class="navbar navbar-expand-lg navbar-light bg-white pl-2 pr-2">
     		<button class="navbar-light navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExplore" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,20 +17,6 @@
     		</button>
 
 
-			    <div class="collapse navbar-collapse" id="navbarsExplore">
-    			<ul class="navbar-nav">
-    				{% for class in classlist %}
-    				<li class="nav-item">
-						<form class="form-horizontal" role="form" action="" method='post'>
-						   {% csrf_token %}
-							  <input type="hidden" name="class" value="{{class.Ccode}}">
-							 <input type="submit" class="btn" value="{{class.Title}}">
-						</form>
-
-    				</li>
-					{% endfor%}
-    			</ul>
-    		</div>
     		</nav>
 
 
@@ -40,13 +26,13 @@
     	<div class="row">
     		<div class="card-columns">
 
-				{% for vi in videolist %}
+				{% for li in livelist %}
     			<div class="card card-pin">
-    				<img class="card-img" src="{{vi.CoverFile.url}}" alt="Card image">
+    				<img class="card-img" src="{{li.roomcover.url}}" alt="Card image">
     				<div class="overlay">
-    					<h2 class="card-title title">{{vi.Title}}</h2>
+    					<h2 class="card-title title">{{li.roomName}}</h2>
     					<div class="more">
-    						<a href="{% url 'vplay' vi.DVcode %}">
+    						<a href="{% url 'room' li.roomID %}">
     						<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> More </a>
     					</div>
     				</div>

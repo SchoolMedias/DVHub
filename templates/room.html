@@ -110,7 +110,7 @@
 
 
      <script>
-     let urlss = "http://localhost:8080/live/{{room.roomID}}.flv";
+     let urlss = "http://59.79.1.23:8080/live/{{room.roomID}}.flv";
      if("{{room.roomstatus}}"=="False")
      {
        urlss= " ";
@@ -122,31 +122,11 @@
         url: urlss,
         type: 'flv',
     },
-     apiBackend: {
-        read: function (options) {
-            console.log('Pretend to connect WebSocket');
-            options.success([]);
-        },
-        send: function (options) {
-            console.log('Pretend to send danmaku via WebSocket', options.data);
-                        chatSocket.send(JSON.stringify({
-                'message': options.data,
-            }));
-            options.success();
-        },
-    },
-
 
     live: true,
-    danmaku: true,
+
 });
- dp.danmaku.opacity(0.5);
- const danmmaku = {
-            text: 'Get a danmaku via WebSocket',
-            color: '#b7daff',
-            type: 'top',
-            };
-             dp.danmaku.draw(danmmaku);
+
 
 
 
@@ -221,7 +201,7 @@
             }
             else if (data.message == "start") {
                 let vid = {
-                url: "http://localhost:8080/live/{{room.roomID}}.flv",
+                url: "http://59.79.1.23:8080/live/{{room.roomID}}.flv",
                 type: 'flv',
             }
             console.log("asdasdasdasasdsadasd666666")

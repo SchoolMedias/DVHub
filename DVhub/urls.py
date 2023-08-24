@@ -45,6 +45,8 @@ urlpatterns = [
     path('password/',User.views.password,name='password'),
     path('imgcenter/',User.views.imgcenter,name='imgcenter'),
     path("livefile", livechat.views.roomfile, name="livefile"),
+    path("lives", main.views.Livelist, name="lives"),
+
     #api
     path('api/danmu',video.views.gdanmu),
 
