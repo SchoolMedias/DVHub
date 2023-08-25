@@ -32,8 +32,12 @@
     				<div class="overlay">
     					<h2 class="card-title title">{{li.roomName}}</h2>
     					<div class="more">
+
+							{% if not li.roomstatus %}
+								<a>未开播</a>
+							{% endif %}
     						<a href="{% url 'room' li.roomID %}">
-    						<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> More </a>
+								<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> 进入直播间 </a>
     					</div>
     				</div>
     			</div>

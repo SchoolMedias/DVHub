@@ -66,9 +66,13 @@
 
 <div>
     <textarea id="chat-log" cols="38" rows="26" contenteditable="false" overflow="scroll" readonly style="resize:none"></textarea><br>
-    <input id="chat-message-input" type="text" size="38"><br>
-    <div style="height:5px"> </div>
-    <input id="chat-message-submit" type="button" class = "btn btn-success btn-lg btn-block" value="Send">
+
+    <input id="chat-message-input" type="text" size="38" required>
+    <a id="tsk" data-toggle="tooltip" data-trigger="manual" title="输入不能为空"></a>
+         <div style="height:5px"> </div>
+    <input id="chat-message-submit" type="submit" class = "btn btn-success btn-lg btn-block" value="Send">
+
+
     {{ room_name|json_script:"room-name" }}
 </div>
         </div>
@@ -128,7 +132,7 @@
 
 
      <script>
-     let urlss = "http://59.79.1.23:8080/live/{{room.roomID}}.flv";
+     let urlss = "http://192.168.43.19:8080/live/{{room.roomID}}.flv";
      if("{{room.roomstatus}}"=="False")
      {
        urlss= " ";
@@ -219,7 +223,7 @@
             }
             else if (data.message == "start") {
                 let vid = {
-                url: "http://59.79.1.23:8080/live/{{room.roomID}}.flv",
+                url: "http://59.79.0.180:8080/live/{{room.roomID}}.flv",
                 type: 'flv',
             }
             console.log("asdasdasdasasdsadasd666666")
@@ -249,6 +253,8 @@
             const data = messageInputDom.value;
             if(data=="")
             {
+                $('#tsk').tooltip('toggle');
+
                 return;
             }
 

@@ -12,9 +12,11 @@
 
 	<link href="{% static '/dropdown/dropdowns.css' %}" rel="stylesheet">
 
-	    <link rel="stylesheet" href="{% static  't1/css/app.css' %}">
+	<link rel="stylesheet" href="{% static  't1/css/app.css' %}">
     <link rel="stylesheet" href="{% static  't1/css/theme.css' %}">
     <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
+    <script src="{% static 'popper\popper.min.js' %}"></script>
+    <script src="{% static 'js\jquery-3.7.0.min.js' %}"></script>
     <!--<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">-->
     <script src="{%static 'bootstrap/js/bootstrap.bundle.min.js'%}"></script>
     <script src="{%static 'bootstrap/js/bootstrap.min.js'%}"></script>
@@ -22,6 +24,7 @@
     <script src="{% static  't1/js/app.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/semantic.custom.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
     {% block css %}{% endblock css %}
 
 
@@ -109,11 +112,11 @@
         </button>
          <ul class="collapse navbar-collapse" id="navbarsDefault">
             <ul class="navbar-nav mr-auto align-items-center">
-                <form class="bd-search hidden-sm-down">
+        <!--        <form class="bd-search hidden-sm-down">
                     <input type="text" class="form-control bg-graylight border-0 font-weight-bold" id="search-input" placeholder="Search..." autocomplete="off">
                     <div class="dropdown-menu bd-search-results" id="search-results">
                     </div>
-                </form>
+                </form> -->
             </ul>
             <ul class="navbar-nav ml-auto align-items-center">
                 <li class="nav-item">

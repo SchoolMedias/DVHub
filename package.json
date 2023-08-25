@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "flv.js": "^1.6.2",
-    "hls.js": "^1.4.10"
+    "hls.js": "^1.4.10",
+    "popper": "^1.0.1"
   }
 }
